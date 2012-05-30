@@ -10,6 +10,15 @@ require('spine/lib/route')
 require('spine/lib/tmpl')
 
 
+require('./selectableModel')
+require('./socketModel')
+
+
+
+require('./format')
+
+
+
 require('./bootstrap/bootstrap-dropdown')
 require('./bootstrap/bootstrap-tooltip')
 require('./bootstrap/bootstrap-popover')

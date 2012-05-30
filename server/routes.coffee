@@ -1,5 +1,3 @@
-Post = require("../app/models/post")
-RedisController = require("./redisController")
 
 class Routes
 

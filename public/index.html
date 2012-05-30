@@ -4,16 +4,23 @@
   <meta charset=utf-8>
   <title>App</title>
   <link rel="stylesheet" href="/application.css" type="text/css" charset="utf-8">
+  <script src="http://js.pusher.com/1.11/pusher.min.js" type="text/javascript"></script>
+  
   <script src="/application.js" type="text/javascript" charset="utf-8"></script>
   <script type="text/javascript" charset="utf-8">
     var jQuery  = require("jqueryify");
+    var Spine = require('spine')
+    
     var exports = this;
     jQuery(function(){
+      Spine.pusherKey = '829f2a81a32bac00f792';
       var App = require("index");
-      exports.app = new App({el: $("body")});      
+      exports.app = new App({el: $("body") });      
     });
   </script>
 
 </head>
-<body></body>
+<body>
+  
+</body>
 </html>

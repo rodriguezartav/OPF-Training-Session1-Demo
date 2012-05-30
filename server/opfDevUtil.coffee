@@ -9,16 +9,17 @@ class OpfDevUtil
     hem = new Hem()
 
     app.get(hem.options.jsPath, hem.hemPackage().createServer())
-    app.get hem.options.cssPath , (req,res) =>
 
+    app.get hem.options.cssPath , (req,res) =>
+      res.header("Content-type", "text/css")
       path = "./css/index.less"
-      parser = new(Less.Parser)( { paths: ['./css/bootstrap', './css/'] , filename: 'index.less' } )
-      fs.readFile path, "utf8" , (err, data) =>
-        throw err if err 
-        parser.parse data, (err, css) ->
-          throw err if err 
-          res.header("Content-type", "text/css");
-          res.send(css.toCSS())
+      try
+        parser = new(Less.Parser)( { paths: ['./css/bootstrap', './css/'] , filename: 'index.less' } )
+        fs.readFile path, "utf8" , (err, data) =>
+          parser.parse data, (err, css) ->
+            res.send(css.toCSS())
+      catch error
+        res.send("")
     
   
 

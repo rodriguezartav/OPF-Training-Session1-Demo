@@ -1,0 +1,11 @@
+<div class="thumbnail ">
+
+  <a class="popable" rel="popover" data-content="<ul>
+  <li class='margin-bottom: 10px;'><span class='label label-success' style='font-size: 20px;' >$<%= @retailPrice.toMoney() %></span> <span class='label label-warning'>Rebate</span> </li>
+  <li><span class='label label-info'><%= @available.toMoney() %> available</span></li>
+  <ul>" data-original-title="<%= @name %>">
+    <%= @name %>
+  </a>
+
+</div>
+

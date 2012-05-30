@@ -1,0 +1,48 @@
+.productBar{
+
+  .navbar{
+    margin: 0px;
+  }
+
+  .productos_list {
+    margin: 0px;
+    max-height: 390px;
+    overflow-y: scroll;
+    padding-top: 12px;
+    .buttonBackground(@btnBackground, @btnBackgroundHighlight);
+    border-bottom-color: darken(@btnBorder, 10%);
+    .border-radius(0px 0px 8px 8px);
+    @shadow: 0 1px 4px rgba(33,33,33,.2);
+    .box-shadow(@shadow);
+    border-top: 3px solid @blue;
+    border: 1px solid @orange;
+
+    .thumbnail {
+      cursor: pointer;
+      height: 42px;
+      background-color: #fff;
+      .box-shadow(@shadow);
+      padding: 9px;
+      &:hover{
+        .buttonBackground(@btnWarningBackground, @btnWarningBackgroundHighlight);
+        a{
+          color: @black;
+          text-decoration: none;
+        }
+      }
+      a{
+        text-transform: capitalize;
+        font-size: 15px;
+        font-weight: 200;
+        color: @black;
+      }
+    
+      &.disable{
+        a{
+          color: #999;
+        }
+      }
+    }
+  }
+
+}
